@@ -37,12 +37,16 @@ Examples of how to automate certificate renewals with ipa-getcert.
 
 Note that a Director by default is installed with a local Transporter.
 
-`sudo ipa-getcert request -K HTTP/$(hostname) \
+```
+sudo ipa-getcert request -K HTTP/$(hostname) \
     -k /etc/ssl/private/$(hostname).key -f /etc/ssl/certs/$(hostname).crt -D $(hostname) \
-    -C "/usr/local/bin/director_chssl.sh -K $(hostname).crt && /usr/local/bin/transporter_chpem.sh"`
+    -C "/usr/local/bin/director_chssl.sh -K $(hostname).crt && /usr/local/bin/transporter_chpem.sh"
+```
 
 ### Transporter automation
 
-`sudo ipa-getcert request -K HTTP/$(hostname) \
+```
+sudo ipa-getcert request -K HTTP/$(hostname) \
     -k /etc/ssl/private/$(hostname).key -f /etc/ssl/certs/$(hostname).crt -D $(hostname) \
-    -C "/usr/local/bin/transporter_chpem.sh"`
+    -C "/usr/local/bin/transporter_chpem.sh"
+```
