@@ -23,6 +23,7 @@ NAKIVO devices use self-signed certificates out of the box. And although one can
 - `./director_chssl.sh`. Will take a certificate and a key file, generate a PKCS12 file with them and use it to create a new keystore file. It will then replace the active keystore and restart the Director service.
 - `./transporter_chpem.sh` Will take a certificate and key file, and store them concatenated to `/opt/nakivo/transporter/certificate.pem`. It will then correct the ownership of the file and restart the Transporter.
   - Doesn't take any options, but the default file locations in the script can be modified.
+  - Uses `cetcerts.sh`, for details see: https://github.com/dmgeurts/catcerts
 
 ## Automation
 
@@ -31,7 +32,6 @@ Examples of how to automate certificate renewals with ipa-getcert.
 **Notes:**
 - In these examples, it is assumed that the certificate CN is the hostname of the respective machine.
 - You may prefer to put the scripts somewhere other than `/usr/local/bin/`.
-- For details on `cetcerts.sh` see: https://github.com/dmgeurts/catcerts
 
 ### Director automation
 
