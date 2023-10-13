@@ -4,7 +4,7 @@
 ## Paths & variables
 BASE="/opt/nakivo/director"
 KEYTOOL="$BASE/jre/bin/keytool"
-KEYSTORE="$BASE/tomcat/cert/.keystor"
+KEYSTORE="$BASE/tomcat/cert/.keystore"
 TOMCAT_CFG="$BASE/tomcat/conf/server-linux.xml"
 CA_CRT="/etc/ipa/ca.crt"
 
