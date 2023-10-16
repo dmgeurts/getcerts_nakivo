@@ -50,3 +50,9 @@ sudo ipa-getcert request -K HTTP/$(hostname) \
     -k /etc/ssl/private/$(hostname).key -f /etc/ssl/certs/$(hostname).crt -D $(hostname) \
     -C "/usr/local/bin/transporter_chpem.sh"
 ```
+
+## Relevant Nakivo sources
+
+- Custom CA-Signed Certificate Compatibility: https://helpcenter.nakivo.com/Knowledge-Base/Content/Frequently-Asked-Questions/Installation-and-Deployment/Custom-CA-Signed-Certificate-Compatibility.htm
+- Creating and Installing Custom CA-Signed Certificate: https://helpcenter.nakivo.com/Knowledge-Base/Content/Frequently-Asked-Questions/Installation-and-Deployment/Creating-and-Installing-Custom-CA-Signed-Certificate.htm
+- Keystore keytool: "_Installing the Self-Signed Certificate Fails_": https://helpcenter.nakivo.com/Knowledge-Base/Content/Installation-and-Deployment-Issues/Installing-the-Self-Signed-Certificate-Fails.htm?Highlight=keystore
