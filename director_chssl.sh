@@ -83,7 +83,7 @@ else
 fi
 
 # Find the configured keystore password
-PASS=$(grep -oP 'keystorePass=\K\S+' "$TOMCAT_CFG")
+PASS=$(grep -oP 'keystorePass=\K\S+' "$TOMCAT_CFG" | xargs)
 
 # Create a PKCS12 file containing the certificate and key for the Director UI
 openssl pkcs12 -export -in "$CRT" -inkey "$KEY" -out "${CRT%.*}.p12" -name tomcat -CAfile "$CA_CRT" -caname root -passout pass:$PASS
