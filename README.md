@@ -14,9 +14,11 @@ NAKIVO devices use self-signed certificates out of the box. And although one can
 
 ### Transporter
 
-- Firstly, a bug, when parsing a certificate to the installer, the ownership isn't changed to user `bhsvc`. Thus this must be corrected and the transports will need to be restarted to get it to use the given certificate.
+- First a bug, when parsing a certificate to the installer, the ownership isn't changed to user `bhsvc`. Thus this must be corrected and the transports will need to be restarted to get it to use the given certificate.
 - The pem certificate file must include the key.
 - The pem certificate file is stored here: `/opt/nakivo/transporter/certificate.pem`.
+- The IPA root CA certificate must be available as `/opt/nakico/transporter.trusted.pem`.
+  - `sudo cp /etc/ipa/ca.crt /opt/nakivo/transporter/trusted.pem` or create a symlink.
 
 ## Some scripts to help automate it all
 
