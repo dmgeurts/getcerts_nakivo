@@ -18,7 +18,9 @@ NAKIVO devices use self-signed certificates out of the box. And although one can
 - The pem certificate file must include the key.
 - The pem certificate file is stored here: `/opt/nakivo/transporter/certificate.pem`.
 - The IPA root CA certificate must be available as `/opt/nakico/transporter.trusted.pem`.
-  - `sudo cp /etc/ipa/ca.crt /opt/nakivo/transporter/trusted.pem` or create a symlink.
+  - `sudo cp /etc/ipa/ca.crt /opt/nakivo/transporter/trusted.pem` (or create a symlink.)
+  - `sudo chattr +i /opt/nakivo/transporter/trusted.pem`  
+    The last command sets the immutable bit on the trusted.pem file, without it a Nakivo Transporter update pushed from the Director will remove this file. Which will cause the Transporter to not trust the Director or other Transporters.
 
 ## Some scripts to help automate it all
 
